@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     val sortedPrograms = programs.sortedBy { it.startAt }
     val firstProgramStartAt = sortedPrograms.first().startAt
-    val lastProgramEndAt = sortedPrograms.maxBy { it.endAt }?.endAt ?: return programs
+    val lastProgramEndAt = sortedPrograms.maxByOrNull { it.endAt }?.endAt ?: return programs
     val stageNumbers = sortedPrograms.map { it.stageNumber }.distinct()
 
     val filledPeriod = ArrayList<Period>()

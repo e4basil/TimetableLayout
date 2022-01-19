@@ -41,7 +41,7 @@ abstract class TimeLabelDecoration(
 
     val startAtList = (0 until adapter.itemCount).map(this::getStartUnixMillis)
 
-    val base = parent.children.filter { it.top <= parent.paddingTop }.minBy { it.top } ?: return
+    val base = parent.children.filter { it.top <= parent.paddingTop }.minByOrNull { it.top } ?: return
     val baseEpochMillis = startAtList.getOrNull(base.layoutPosition) ?: return
 
     startAtList

@@ -23,11 +23,11 @@ class StageNameDecoration(context: Context, private val periods: List<Period>, c
 
   override fun getColumnName(columnNumber: Int): String {
     return when (columnNumber) {
-      0 -> "Melodic Hardcore"
-      1 -> "Metalcore"
-      2 -> "Hardcore"
-      3 -> "Deathcore"
-      else -> "Djent"
+      0 -> "Chair 1"
+      1 -> "Chair 2"
+      2 -> "Chair 3"
+      3 -> "Chair 4"
+      else -> "Chair 5"
     }
   }
 }

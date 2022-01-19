@@ -588,7 +588,7 @@ class TimetableLayoutManager(
     return (0 until childCount).asSequence()
       .mapNotNull(this::getChildAt)
       .filter { getDecoratedLeft(it) <= parentLeft }
-      .minWith(Comparator { viewL, viewR ->
+      .minWithOrNull(Comparator { viewL, viewR ->
         getDecoratedTop(viewL) - getDecoratedTop(viewR)
       })
   }

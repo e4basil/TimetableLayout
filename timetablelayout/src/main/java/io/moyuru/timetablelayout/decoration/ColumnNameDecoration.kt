@@ -35,7 +35,7 @@ abstract class ColumnNameDecoration(
 
     if (parent.childCount < 0) return
 
-    val rightView = parent.children.maxBy { it.right } ?: return
+    val rightView = parent.children.maxByOrNull { it.right } ?: return
     val rightColumnNumber = getColumnNumber(rightView.layoutPosition)
     val range = if (rightColumnNumber == lastColumnNumber) rightColumnNumber downTo 0
     else (rightColumnNumber downTo 0) + (lastColumnNumber downTo rightColumnNumber + 1)
